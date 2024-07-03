@@ -75,7 +75,7 @@
         }
       ]
     },
-    "description": "Loki logs panel with prometheus variables ",
+    "description": "Loki logs panel with loki variables ",
     "editable": true,
     "gnetId": 15324,
     "graphTooltip": 0,
@@ -236,7 +236,7 @@
         {
           "allValue": null,
           "current": {},
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "${DS_LOKI}",
           "definition": "label_values(kube_pod_info, namespace)",
           "description": null,
           "error": null,
@@ -249,7 +249,7 @@
           "query": {
             "qryType": 1,
             "query": "label_values(kube_pod_info, namespace)",
-            "refId": "Prometheus-namespace-Variable-Query"
+            "refId": "Loki-namespace-Variable-Query"
           },
           "refresh": 1,
           "regex": "",
@@ -263,7 +263,7 @@
         {
           "allValue": ".*",
           "current": {},
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "${DS_LOKI}",
           "definition": "label_values(container_network_receive_bytes_total{namespace=~\"$namespace\"},pod)",
           "description": null,
           "error": null,
@@ -276,7 +276,7 @@
           "query": {
             "qryType": 1,
             "query": "label_values(container_network_receive_bytes_total{namespace=~\"$namespace\"},pod)",
-            "refId": "Prometheus-pod-Variable-Query"
+            "refId": "Loki-pod-Variable-Query"
           },
           "refresh": 1,
           "regex": "",
@@ -330,7 +330,7 @@
       ]
     },
     "timezone": "",
-    "title": "Loki Logs Dashboard",
+    "title": "Logs Dashboard",
     "uid": "liz0yRCZz",
     "version": 5
   }
