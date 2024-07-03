@@ -2,57 +2,11 @@
     "__inputs": [
       {
         "name": "DS_LOKI",
-        "label": "Loki",
+        "label": "DS_LOKI",
         "description": "",
         "type": "datasource",
         "pluginId": "loki",
         "pluginName": "Loki"
-      },
-      {
-        "name": "DS_PROMETHEUS",
-        "label": "Prometheus",
-        "description": "",
-        "type": "datasource",
-        "pluginId": "prometheus",
-        "pluginName": "Prometheus"
-      }
-    ],
-    "__requires": [
-      {
-        "type": "grafana",
-        "id": "grafana",
-        "name": "Grafana",
-        "version": "8.1.6"
-      },
-      {
-        "type": "panel",
-        "id": "graph",
-        "name": "Graph (old)",
-        "version": ""
-      },
-      {
-        "type": "panel",
-        "id": "logs",
-        "name": "Logs",
-        "version": ""
-      },
-      {
-        "type": "datasource",
-        "id": "loki",
-        "name": "Loki",
-        "version": "1.0.0"
-      },
-      {
-        "type": "datasource",
-        "id": "prometheus",
-        "name": "Prometheus",
-        "version": "1.0.0"
-      },
-      {
-        "type": "panel",
-        "id": "text",
-        "name": "Text",
-        "version": ""
       }
     ],
     "annotations": {
@@ -60,7 +14,10 @@
         {
           "$$hashKey": "object:75",
           "builtIn": 1,
-          "datasource": "-- Grafana --",
+          "datasource":{
+            "type": "datasource",
+            "uid": "grafana"
+          },
           "enable": true,
           "hide": true,
           "iconColor": "rgba(0, 211, 255, 1)",
@@ -75,7 +32,7 @@
         }
       ]
     },
-    "description": "Loki logs panel with loki variables ",
+    "description": "Loki logs panel with loki variables",
     "editable": true,
     "gnetId": 15324,
     "graphTooltip": 0,
