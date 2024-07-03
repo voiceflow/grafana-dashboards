@@ -75,7 +75,7 @@
         }
       ]
     },
-    "description": "Loki logs panel with prometheus variables ",
+    "description": "Loki logs panel with Loki variables ",
     "editable": true,
     "gnetId": 15324,
     "graphTooltip": 0,
@@ -249,7 +249,7 @@
           "query": {
             "qryType": 1,
             "query": "label_values(kube_pod_info, namespace)",
-            "refId": "Prometheus-namespace-Variable-Query"
+            "refId": "Loki-namespace-Variable-Query"
           },
           "refresh": 1,
           "regex": "",
@@ -268,15 +268,15 @@
           "description": null,
           "error": null,
           "hide": 0,
-          "includeAll": false,
+          "includeAll": true,
           "label": "Pod",
-          "multi": false,
+          "multi": true,
           "name": "pod",
           "options": [],
           "query": {
             "qryType": 1,
             "query": "label_values(container_network_receive_bytes_total{namespace=~\"$namespace\"},pod)",
-            "refId": "Prometheus-pod-Variable-Query"
+            "refId": "Loki-pod-Variable-Query"
           },
           "refresh": 1,
           "regex": "",
