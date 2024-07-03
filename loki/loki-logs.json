@@ -1,14 +1,4 @@
 {
-    "__inputs": [
-      {
-        "name": "DS_LOKI",
-        "label": "DS_LOKI",
-        "description": "",
-        "type": "datasource",
-        "pluginId": "loki",
-        "pluginName": "Loki"
-      }
-    ],
     "annotations": {
       "list": [
         {
@@ -45,7 +35,10 @@
         "bars": true,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_LOKI}",
+        "datasource": {
+          "type": "loki",
+          "uid": "loki"
+        },
         "fieldConfig": {
           "defaults": {
             "links": []
@@ -135,7 +128,10 @@
         }
       },
       {
-        "datasource": "${DS_LOKI}",
+        "datasource": {
+          "type": "loki",
+          "uid": "loki"
+        },
         "gridPos": {
           "h": 25,
           "w": 24,
@@ -193,7 +189,10 @@
         {
           "allValue": null,
           "current": {},
-          "datasource": "${DS_LOKI}",
+          "datasource": {
+            "type": "loki",
+            "uid": "loki"
+          },
           "definition": "label_values(kube_pod_info, namespace)",
           "description": null,
           "error": null,
@@ -220,7 +219,10 @@
         {
           "allValue": ".*",
           "current": {},
-          "datasource": "${DS_LOKI}",
+          "datasource": {
+            "type": "loki",
+            "uid": "loki"
+          },
           "definition": "label_values(container_network_receive_bytes_total{namespace=~\"$namespace\"},pod)",
           "description": null,
           "error": null,
