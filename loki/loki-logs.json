@@ -27,7 +27,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 15324,
   "graphTooltip": 0,
-  "id": 55,
+  "id": 15,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -109,6 +109,11 @@
   "templating": {
     "list": [
       {
+        "current": {
+          "selected": true,
+          "text": "ambassador",
+          "value": "ambassador"
+        },
         "datasource": {
           "type": "loki",
           "uid": "P8E80F9AEF21F6940"
@@ -138,9 +143,13 @@
       {
         "allValue": ".*",
         "current": {
-          "selected": false,
-          "text": "All",
-          "value": "$__all"
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
         },
         "datasource": {
           "type": "loki",
@@ -156,7 +165,7 @@
         "query": {
           "label": "pod",
           "refId": "LokiVariableQueryEditor-VariableQuery",
-          "stream": "",
+          "stream": "{namespace=\"$namespace\"}",
           "type": 1
         },
         "refresh": 1,
@@ -209,8 +218,8 @@
     ]
   },
   "timezone": "",
-  "title": "Logfs Dashboard",
+  "title": "Logs Dashboard",
   "uid": "liz0yRCZzc",
-  "version": 5,
+  "version": 1,
   "weekStart": ""
 }
