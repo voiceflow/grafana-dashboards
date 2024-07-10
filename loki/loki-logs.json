@@ -141,11 +141,6 @@
         "useTags": false
       },
       {
-        "current": {
-          "selected": true,
-          "text": "creator-app",
-          "value": "creator-app"
-        },
         "datasource": {
           "type": "loki",
           "uid": "P8E80F9AEF21F6940"
@@ -209,7 +204,7 @@
     ]
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {
