@@ -60,7 +60,8 @@
             "type": "loki",
             "uid": "P8E80F9AEF21F6940"
           },
-          "expr": "{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "editorMode": "code",
+          "expr": "{namespace=\"$namespace\", pod=~\"$pod\"}|=\"$search\"",
           "queryType": "range",
           "refId": "A"
         }
@@ -110,7 +111,7 @@
     "list": [
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "ambassador",
           "value": "ambassador"
         },
@@ -200,6 +201,26 @@
         "tagsQuery": "",
         "type": "query",
         "useTags": false
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "",
+          "value": ""
+        },
+        "hide": 0,
+        "label": "search",
+        "name": "search",
+        "options": [
+          {
+            "selected": true,
+            "text": "",
+            "value": ""
+          }
+        ],
+        "query": "",
+        "skipUrlSync": false,
+        "type": "textbox"
       }
     ]
   },
