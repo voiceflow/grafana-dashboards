@@ -60,7 +60,8 @@
             "type": "loki",
             "uid": "P8E80F9AEF21F6940"
           },
-          "expr": "{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "editorMode": "code",
+          "expr": "{namespace=\"$namespace\", pod=~\"$pod\"}|=\"$search\"",
           "queryType": "range",
           "refId": "A"
         }
@@ -110,7 +111,7 @@
     "list": [
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "ambassador",
           "value": "ambassador"
         },
@@ -141,6 +142,36 @@
         "useTags": false
       },
       {
+        "current": {
+          "isNone": true,
+          "selected": false,
+          "text": "None",
+          "value": ""
+        },
+        "datasource": {
+          "type": "loki",
+          "uid": "P8E80F9AEF21F6940"
+        },
+        "definition": "",
+        "hide": 0,
+        "includeAll": false,
+        "label": "component",
+        "multi": false,
+        "name": "component",
+        "options": [],
+        "query": {
+          "label": "component",
+          "refId": "LokiVariableQueryEditor-VariableQuery",
+          "stream": "{namespace=\"$namespace\"}",
+          "type": 1
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
         "allValue": ".*",
         "current": {
           "selected": true,
@@ -165,7 +196,7 @@
         "query": {
           "label": "pod",
           "refId": "LokiVariableQueryEditor-VariableQuery",
-          "stream": "{namespace=\"$namespace\"}",
+          "stream": "{namespace=\"$namespace\", component=\"$component\"}",
           "type": 1
         },
         "refresh": 1,
@@ -184,7 +215,7 @@
           "value": ""
         },
         "hide": 0,
-        "label": "Search",
+        "label": "search",
         "name": "search",
         "options": [
           {
