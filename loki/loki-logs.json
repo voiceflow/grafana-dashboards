@@ -111,8 +111,8 @@
       {
         "current": {
           "selected": true,
-          "text": "dev-ben",
-          "value": "dev-ben"
+          "text": "ambassador",
+          "value": "ambassador"
         },
         "datasource": {
           "type": "loki",
