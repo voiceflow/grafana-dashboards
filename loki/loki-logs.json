@@ -142,12 +142,6 @@
         "useTags": false
       },
       {
-        "current": {
-          "isNone": true,
-          "selected": false,
-          "text": "None",
-          "value": ""
-        },
         "datasource": {
           "type": "loki",
           "uid": "P8E80F9AEF21F6940"
