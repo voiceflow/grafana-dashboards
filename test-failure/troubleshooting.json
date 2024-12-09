@@ -273,34 +273,7 @@
             ]
           }
         },
-        "overrides": [
-          {
-            "__systemRef": "hideSeriesFrom",
-            "matcher": {
-              "id": "byNames",
-              "options": {
-                "mode": "exclude",
-                "names": [
-                  "{deploy=\"database-migration\", node=\"ip-10-127-146-93.sa-east-1.compute.internal\"}",
-                  "{deploy=\"database-migration\", node=\"ip-10-127-149-47.sa-east-1.compute.internal\"}",
-                  "{deploy=\"database-migration\", node=\"ip-10-127-171-52.sa-east-1.compute.internal\"}"
-                ],
-                "prefix": "All except:",
-                "readOnly": true
-              }
-            },
-            "properties": [
-              {
-                "id": "custom.hideFrom",
-                "value": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": true
-                }
-              }
-            ]
-          }
-        ]
+        "overrides": []
       },
       "gridPos": {
         "h": 8,
@@ -362,21 +335,21 @@
         "uid": "P8E80F9AEF21F6940"
       },
       "gridPos": {
-        "h": 8,
-        "w": 12,
+        "h": 12,
+        "w": 24,
         "x": 0,
         "y": 9
       },
       "id": 4,
       "options": {
-        "dedupStrategy": "none",
+        "dedupStrategy": "exact",
         "enableLogDetails": true,
         "prettifyLogMessage": false,
         "showCommonLabels": false,
         "showLabels": false,
-        "showTime": false,
-        "sortOrder": "Descending",
-        "wrapLogMessage": false
+        "showTime": true,
+        "sortOrder": "Ascending",
+        "wrapLogMessage": true
       },
       "pluginVersion": "10.2.2",
       "targets": [
@@ -387,6 +360,7 @@
           },
           "editorMode": "code",
           "expr": "{namespace=\"$namespace\", app=~\"$deployment.*\"}|=\"$search\"",
+          "maxLines": 5000,
           "queryType": "range",
           "refId": "A"
         }
@@ -479,8 +453,12 @@
         "allValue": ".*",
         "current": {
           "selected": true,
-          "text": "All",
-          "value": "$__all"
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
         },
         "datasource": {
           "type": "prometheus",
@@ -489,7 +467,7 @@
         "definition": "query_result(label_replace(kube_pod_info{job=\"kube-state-metrics\", namespace=\"$namespace\"}, \"deploy\", \"$1-$2\", \"pod\", \"([a-zA-Z]+)-([a-zA-Z]+)-.*\"))",
         "hide": 0,
         "includeAll": true,
-        "multi": false,
+        "multi": true,
         "name": "deployment",
         "options": [],
         "query": {
@@ -537,13 +515,13 @@
     ]
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-15m",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Troubleshooting",
   "uid": "a8657d74-3d67-4c2c-8280-fb97191b36b0",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
